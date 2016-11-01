@@ -20,22 +20,8 @@ services:
       - "8080:80"
       - "8443:443"
     volumes:
-      - ./simplesamlphp:/var/simplesamlphp
+      #- ./simplesamlphp:/var/simplesamlphp
       - ./config:/var/simplesamlphp/config
       - ./metadata:/var/simplesamlphp/metadata
       - ./cert:/var/simplesamlphp/cert
 
-# TODO:
-
-  #rocketchat:
-    #networks:
-      #simplesaml-network:
-    #image: rocketchat
-    #build:
-      #context: .
-      #dockerfile: Dockerfile.rocketchat
-    #container_name: rocketchat
-    #environment:
-      #- TERM=xterm
-    #ports:
-      #- "8081:80"
