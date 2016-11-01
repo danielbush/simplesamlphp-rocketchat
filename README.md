@@ -36,7 +36,7 @@ Configure rocketchat (login as admin):
 
 * In http://rocketchat.local/admin/SAML
 
-<code>
+<pre><code>
     Enable                            = True
     Custom Provider                   = test-idp
     Custom Entry Point                = http://simplesaml.local/simplesaml/saml2/idp/SSOService.php
@@ -46,7 +46,7 @@ Configure rocketchat (login as admin):
     SAML_Custom_Public_Cert_File_Path = $(pwd)/cert/rocketchat.crt
     SAML_Custom_Private_Key_File_Path = $(pwd)/cert/rocketchat.pem
     Button Text                       = SAML
-</code>
+</code></pre>
 
 
 Open up a new (eg private) browser session.
