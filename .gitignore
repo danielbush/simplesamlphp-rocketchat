@@ -1,2 +1,6 @@
 venv/
 simplesamlphp/
+*.key
+*.crt
+*.pubkey
+*.pem
