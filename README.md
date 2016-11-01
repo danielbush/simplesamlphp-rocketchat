@@ -7,12 +7,16 @@
   `rocketchat/` are populated with code.
   * note: we don't actually use the checked out simplesaml code atm
   * and... you can run your rocketchat dev anywhere, doesn't have to be here
-* make cert/keys: **idp** (simplesaml) cert/key and **sp** (rocketchat)
-  * `cert/make.sh`
+* make cert/keys: `cert/make.sh`
+  * **idp** = simplesaml and **sp** = rocketchat
   * should create `cert/rocketchat.{pem,crt}`, `cert/simplesaml.{pem,crt}`
-* add entries in `etc-hosts` to your `/etc/hosts`
-* symlink or include either `apache.conf` or `nginx.conf` into your host webserver
-* build simplesaml: `docker-compose build`
+    so that simplesaml and rocketchat containers will be able to sign/verify and encrypt/decrypt
+    saml assertions
+* symlink or include either `apache.conf` or `nginx.conf` into your host webserver and restarted it
+  so that your host webserver is configured as reverse proxy for simplesaml and rocketchat
+* add entries in `etc-hosts` to your `/etc/hosts` so that your browser resolves correctly
+* build simplesaml: `docker-compose build` (or `docker-compose build --pull`) so that our
+  modified simplesamlphp image is built
 
 ## Synopsis
 
@@ -48,6 +52,11 @@ Configure rocketchat (login as admin):
     Button Text                       = SAML
 </code></pre>
 
+**Note:**
+
+* `SAML_Custom_Public_Cert_File_Path`, `SAML_Custom_Private_Key_File_Path` and `SAML_IDP_SLO_Redirect_URL` are relatively new and may still be on feature branches.
+
+
 **Test**
 
 * Open up a new (eg private) browser session to http://rocketchat.local .
@@ -63,4 +72,4 @@ Configure rocketchat (login as admin):
   * `'assertion.encryption' => FALSE,`
   * `'redirect.sign' => TRUE,`
   * `'redirect.validate' => TRUE,`
-  * see `simplesamlphp/docs/simplesamlphp-reference-sp-remote.md` for **assertion and response signing** settings
+* See `simplesamlphp/docs/simplesamlphp-reference-sp-remote.md` for **assertion and response signing** settings
