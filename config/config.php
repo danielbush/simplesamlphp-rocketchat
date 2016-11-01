@@ -109,7 +109,7 @@ $config = array(
      * Example:
      *   'trusted.url.domains' => array('sp.example.com', 'app.example.com'),
      */
-    'trusted.url.domains' => array('gemini:3000'),
+    'trusted.url.domains' => array('rocketchat.local'),
 
     /*
      * Enable regular expression matching of trusted.url.domains.
