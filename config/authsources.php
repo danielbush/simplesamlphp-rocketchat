@@ -11,16 +11,15 @@ $config = array(
 
     'example-userpass' => array(
         'exampleauth:UserPass',
-        'student:studentpass' => array(
+        'student:admin' => array(
             'uid' => array('student'),
             'email' => array('student@example.com'),
             'eduPersonAffiliation' => array('member', 'student'),
         ),
-        'employee:employeepass' => array(
+        'employee:admin' => array(
             'uid' => array('employee'),
             'email' => array('employee@example.com'),
             'eduPersonAffiliation' => array('member', 'employee'),
         ),
     ),
 );
-

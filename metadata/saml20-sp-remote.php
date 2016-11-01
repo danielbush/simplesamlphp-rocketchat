@@ -1,11 +1,10 @@
 <?php
 
-$metadata['http://gemini:3000/_saml/metadata/catalyst-idp'] = array(
-    'AssertionConsumerService' => 'http://gemini:3000/_saml/validate/catalyst-idp',
-    // Not sure if logout url is provided:
-    'SingleLogoutService'      => 'http://gemini:3000/_saml/logout/catalyst-idp',
+$metadata['http://sp/_saml/metadata/test-idp'] = array(
+    'AssertionConsumerService' => 'http://rocketchat/_saml/validate/test-idp',
+    'SingleLogoutService'      => 'http://rocketchat/_saml/logout/test-idp',
+    'certificate' => 'rocketchat.crt',
     'assertion.encryption' => FALSE,
-    'certificate' => 'gemini.crt',
-    'redirect.sign' => FALSE,
+    'redirect.sign' => TRUE,
     'redirect.validate' => TRUE,
 );

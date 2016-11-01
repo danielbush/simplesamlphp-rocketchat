@@ -21,7 +21,7 @@ $config = array(
      * reverse proxy).
      */
     //'baseurlpath' => 'simplesaml/',
-    'baseurlpath' => 'http://simplesaml.local/simplesaml/',
+    'baseurlpath' => 'http://simplesaml/simplesaml/',
     'certdir' => 'cert/',
     'loggingdir' => 'log/',
     'datadir' => 'data/',
@@ -39,7 +39,7 @@ $config = array(
      * also as the technical contact in generated metadata.
      */
     'technicalcontact_name' => 'Administrator',
-    'technicalcontact_email' => 'danb@catalyst-au.net',
+    'technicalcontact_email' => 'admin@example.com',
 
     /*
      * The timezone of the server. This option should be set to the timezone you want
@@ -109,7 +109,7 @@ $config = array(
      * Example:
      *   'trusted.url.domains' => array('sp.example.com', 'app.example.com'),
      */
-    'trusted.url.domains' => array(),
+    'trusted.url.domains' => array('gemini:3000'),
 
     /*
      * Enable regular expression matching of trusted.url.domains.
