@@ -21,7 +21,7 @@ $config = array(
      * reverse proxy).
      */
     //'baseurlpath' => 'simplesaml/',
-    'baseurlpath' => 'http://simplesaml/simplesaml/',
+    'baseurlpath' => 'http://simplesaml.local/simplesaml/',
     'certdir' => 'cert/',
     'loggingdir' => 'log/',
     'datadir' => 'data/',
