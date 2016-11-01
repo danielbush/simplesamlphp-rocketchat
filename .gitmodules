@@ -1,3 +1,6 @@
 [submodule "simplesamlphp"]
 	path = simplesamlphp
 	url = https://github.com/simplesamlphp/simplesamlphp.git
+[submodule "rocketchat"]
+	path = rocketchat
+	url = https://github.com/RocketChat/Rocket.Chat.git
