@@ -48,5 +48,10 @@ Configure rocketchat (login as admin):
     Button Text                       = SAML
 </code></pre>
 
+**Test**
 
-Open up a new (eg private) browser session.
+* Open up a new (eg private) browser session to http://rocketchat.local .
+* Try to login using SAML.
+* Then log out.
+* Then log in again.
+  * did you have to authenticate with simplesaml this time?
