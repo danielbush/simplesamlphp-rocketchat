@@ -1,3 +1,9 @@
 #!/bin/bash
-test -n $1 || { echo "Need name of cert/key ie <name>.{pem,crt}."; exit 1; }
-openssl req -x509 -batch -nodes -newkey rsa:2048 -keyout ./$1.pem -out ./$1.crt
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+$DIR/make-cert.sh simplesaml
+$DIR/make-cert.sh simplesaml
+# The simplesaml container assumes these:
+cp $DIR/simplesaml.crt $DIR/saml.crt
+cp $DIR/simplesaml.pem $DIR/saml.pem
