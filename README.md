@@ -2,20 +2,23 @@
 
 ## Setup
 
-* Be able to run `docker-compose`
-* `git submodules update --init` so that `simplesamlphp/` and
+Note: **idp** will be simplesaml container that we will run via
+docker-compose and the **sp** will be rocketchat running in
+development.
+
+* run: `git submodules update --init` so that `simplesamlphp/` and
   `rocketchat/` are populated with code.
   * note: we don't actually use the checked out simplesaml code atm
   * and... you can run your rocketchat dev anywhere, doesn't have to be here
 * make cert/keys: `cert/make.sh`
-  * **idp** = simplesaml and **sp** = rocketchat
   * should create `cert/rocketchat.{pem,crt}`, `cert/simplesaml.{pem,crt}`
     so that simplesaml and rocketchat containers will be able to sign/verify and encrypt/decrypt
-    saml assertions
-* symlink or include either `apache.conf` or `nginx.conf` into your host webserver and restarted it
+    saml assertions; (note: `saml.{pem,crt}` are a copy of `simplesaml.{pem,crt}` and
+    are assumed by the simplesaml container)
+* symlink or includ either `apache.conf` or `nginx.conf` into your host webserver and restart it
   so that your host webserver is configured as reverse proxy for simplesaml and rocketchat
 * add entries in `etc-hosts` to your `/etc/hosts` so that your browser resolves correctly
-* build simplesaml: `docker-compose build` (or `docker-compose build --pull`) so that our
+* build simplesaml: `docker-compose build` (or `docker-compose build --pull`) so that the
   modified simplesamlphp image is built
 
 ## Synopsis
