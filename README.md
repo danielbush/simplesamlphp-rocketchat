@@ -1,10 +1,11 @@
-# Run simplesamlphp as basic idp (for testing sp implementations)
+# Run simplesamlphp as basic idp (for testing Rocketchat implementations)
+
+The **idp** will be a simplesaml container that we will run via
+docker-compose and the **sp** will be rocketchat running in
+development mode on your host.
 
 ## Setup
 
-Note: **idp** will be simplesaml container that we will run via
-docker-compose and the **sp** will be rocketchat running in
-development.
 
 * run: `git submodules update --init` so that `simplesamlphp/` and
   `rocketchat/` are populated with code.
@@ -36,7 +37,7 @@ Start simplesaml and meteor/rocketchat:
 **Test**
 
 * `http://simplesaml.local` should show a generic apache ubuntu page
-* `http://simplesaml.local/simplesaml` should redirect to a installation page
+* `http://simplesaml.local/simplesaml` should redirect to a simplesaml "home" page
 * `http://rocketchat.local` should show your dev rocketchat
 
 Configure rocketchat (login as admin):
