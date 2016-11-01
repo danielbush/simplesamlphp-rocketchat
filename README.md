@@ -60,9 +60,9 @@ Configure rocketchat (login as admin):
 
 * See `metadata/saml20-sp-remote.php`
 * These settings determine **redirect querystring signing** and **encryption**:
-
-    `'assertion.encryption' => FALSE,`
-    `'redirect.sign' => TRUE,`
-    `'redirect.validate' => TRUE,`
+  * `'assertion.encryption' => FALSE,`
+  * `'redirect.sign' => TRUE,`
+  * `'redirect.validate' => TRUE,`
+  * see `simplesamlphp/docs/simplesamlphp-reference-sp-remote.md` for assertion and response signing settings
 
 TODO: I think there is signing within the SAML assertions which is probably mandatory (not sure).
