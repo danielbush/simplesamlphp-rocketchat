@@ -64,10 +64,11 @@ Configure rocketchat (login as admin):
 **Test**
 
 * Open up a new (eg private) browser session to http://rocketchat.local .
-* Try to login using SAML.
-* Then log out.
+* Try to login using SAML button.
+  * You should be taken to a simplesaml login screen.  Use `student/admin` see `config/authsources.php`.
+* Then log out using the normal logout button.
 * Then log in again.
-  * did you have to authenticate with simplesaml this time?
+  * you should be asked to authenticate with simplesaml again
 
 ### Changing signing / verification and encryption settings
 
