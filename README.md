@@ -55,3 +55,14 @@ Configure rocketchat (login as admin):
 * Then log out.
 * Then log in again.
   * did you have to authenticate with simplesaml this time?
+
+### Changing signing / verification and encryption settings
+
+* See `metadata/saml20-sp-remote.php`
+* These settings determine **redirect querystring signing** and **encryption**:
+
+    `'assertion.encryption' => FALSE,`
+    `'redirect.sign' => TRUE,`
+    `'redirect.validate' => TRUE,`
+
+TODO: I think there is signing within the SAML assertions which is probably mandatory (not sure).
