@@ -1,20 +1,18 @@
 version: '2'
 
 networks:
-  simplesaml-moodle:
+  simplesaml-network:
     driver: bridge
 
 services:
 
   simplesaml:
-    extra_hosts:
-      - "gemini:192.168.124.168" # so we can talk to meteor on my host system
     networks:
-      simplesaml-moodle:
-    image: jnyryan/simplesamlphp
-    #build: 
-      #context: .
-      #dockerfile: Dockerfile
+      simplesaml-network:
+    image: simplesamlphp
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: simplesaml
     environment:
       - TERM=xterm
@@ -22,7 +20,22 @@ services:
       - "8080:80"
       - "8443:443"
     volumes:
+      - ./simplesamlphp:/var/simplesamlphp
       - ./config:/var/simplesamlphp/config
       - ./metadata:/var/simplesamlphp/metadata
       - ./cert:/var/simplesamlphp/cert
 
+# TODO:
+
+  #rocketchat:
+    #networks:
+      #simplesaml-network:
+    #image: rocketchat
+    #build:
+      #context: .
+      #dockerfile: Dockerfile.rocketchat
+    #container_name: rocketchat
+    #environment:
+      #- TERM=xterm
+    #ports:
+      #- "8081:80"
