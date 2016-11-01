@@ -1,0 +1,2 @@
+# Add this to your /etc/hosts if using apache or nginx conf files.
+127.0.0.2 simplesaml.local rocketchat.local
