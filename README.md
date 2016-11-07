@@ -38,6 +38,8 @@ Start simplesaml and meteor/rocketchat:
 
 * `http://simplesaml.local` should show a generic apache ubuntu page
 * `http://simplesaml.local/simplesaml` should redirect to a simplesaml "home" page
+   * you should be able to login as administrator from this page
+   * see `config/config.php`, the `'auth.adminpassword' => 'admin'`
 * `http://rocketchat.local` should show your dev rocketchat
 
 Configure rocketchat (login as admin):
